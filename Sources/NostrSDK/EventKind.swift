@@ -117,6 +117,8 @@ public enum EventKind: RawRepresentable, CaseIterable, Codable, Equatable, Hasha
     ///
     /// See [NIP-23](https://github.com/nostr-protocol/nips/blob/master/23.md).
     case longformContent
+
+    case liveActivities
     
     /// This kind of event represents an occurrence that spans between a start date and end date.
     /// See [NIP-52 - Date-Based Calendar Event](https://github.com/nostr-protocol/nips/blob/master/52.md#calendar-events-1).
@@ -159,6 +161,7 @@ public enum EventKind: RawRepresentable, CaseIterable, Codable, Equatable, Hasha
         .bookmarksList,
         .authentication,
         .longformContent,
+        .liveActivities,
         .dateBasedCalendarEvent,
         .timeBasedCalendarEvent,
         .calendar,
@@ -194,6 +197,7 @@ public enum EventKind: RawRepresentable, CaseIterable, Codable, Equatable, Hasha
         case .bookmarksList:                return 10003
         case .authentication:               return 22242
         case .longformContent:              return 30023
+        case .liveActivities:               return 30311
         case .dateBasedCalendarEvent:       return 31922
         case .timeBasedCalendarEvent:       return 31923
         case .calendar:                     return 31924
@@ -223,6 +227,7 @@ public enum EventKind: RawRepresentable, CaseIterable, Codable, Equatable, Hasha
         case .bookmarksList:                return BookmarksListEvent.self
         case .authentication:               return AuthenticationEvent.self
         case .longformContent:              return LongformContentEvent.self
+        case .liveActivities                return LiveActivitiesEvent.self
         case .dateBasedCalendarEvent:       return DateBasedCalendarEvent.self
         case .timeBasedCalendarEvent:       return TimeBasedCalendarEvent.self
         case .calendar:                     return CalendarListEvent.self
