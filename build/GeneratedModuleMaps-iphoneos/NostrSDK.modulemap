@@ -1,0 +1,4 @@
+module NostrSDK {
+header "NostrSDK-Swift.h"
+export *
+}

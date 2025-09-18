@@ -62,9 +62,13 @@ public struct Keypair {
     }
 }
 
-public struct PublicKey: Equatable {
+public struct PublicKey: Equatable, Hashable {
     public static func == (lhs: Self, rhs: Self) -> Bool {
         lhs.hex == rhs.hex
+    }
+
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(hex)
     }
 
     public let hex: String
@@ -76,7 +80,7 @@ public struct PublicKey: Equatable {
     }
 
     public init?(hex: String) {
-        guard hex.isEmpty == false else {
+        guard !hex.isEmpty else {
             Loggers.keypairs.error("Trying to create public key with empty string")
             return nil
         }
@@ -92,7 +96,7 @@ public struct PublicKey: Equatable {
     public init?(npub: String) {
         guard let (humanReadablePart, checksum) = try? Bech32.decode(npub) else {
             Loggers.keypairs.error("Could not create public key because npub could not be bech32 decoded.")
-           return nil
+            return nil
         }
 
         guard humanReadablePart == Bech32IdentifierType.publicKey.rawValue else {
@@ -110,6 +114,7 @@ public struct PublicKey: Equatable {
         hex = checksumBase8.hexString
     }
 }
+
 
 public struct PrivateKey {
     public let hex: String

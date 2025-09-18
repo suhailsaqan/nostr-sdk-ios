@@ -91,6 +91,16 @@ public enum EventKind: RawRepresentable, CaseIterable, Codable, Equatable, Hasha
     ///
     /// See [NIP-32 Labeling](https://github.com/nostr-protocol/nips/blob/master/32.md).
     case label
+    
+    ///
+    ///
+    /// See [NIP-57 Lightning Zaps](https://github.com/nostr-protocol/nips/blob/master/57.md).
+    case zapRequest
+    
+    ///
+    ///
+    /// See [NIP-57 Lightning Zaps](https://github.com/nostr-protocol/nips/blob/master/57.md).
+    case zapReceipt
 
     /// This kind of event contains a list of things the user does not want to see, such as pubkeys, hashtags, words, and event ids (threads).
     ///
@@ -113,10 +123,18 @@ public enum EventKind: RawRepresentable, CaseIterable, Codable, Equatable, Hasha
     /// See [NIP-42](https://github.com/nostr-protocol/nips/blob/master/42.md).
     case authentication
 
+    case nwcRequest
+
+    case nwcResponse
+
     /// This kind of event is for long-form texxt content, generally referred to as "articles" or "blog posts".
     ///
     /// See [NIP-23](https://github.com/nostr-protocol/nips/blob/master/23.md).
     case longformContent
+
+    case liveActivities
+
+    case liveChatMessage
     
     /// This kind of event represents an occurrence that spans between a start date and end date.
     /// See [NIP-52 - Date-Based Calendar Event](https://github.com/nostr-protocol/nips/blob/master/52.md#calendar-events-1).
@@ -154,11 +172,17 @@ public enum EventKind: RawRepresentable, CaseIterable, Codable, Equatable, Hasha
         .giftWrap,
         .report,
         .label,
+        .zapRequest,
+        .zapReceipt,
         .muteList,
         .relayListMetadata,
         .bookmarksList,
         .authentication,
+        .nwcRequest,
+        .nwcResponse,
         .longformContent,
+        .liveActivities,
+        .liveChatMessage,
         .dateBasedCalendarEvent,
         .timeBasedCalendarEvent,
         .calendar,
@@ -189,11 +213,17 @@ public enum EventKind: RawRepresentable, CaseIterable, Codable, Equatable, Hasha
         case .giftWrap:                     return 1059
         case .report:                       return 1984
         case .label:                        return 1985
+        case .zapRequest:                   return 9734
+        case .zapReceipt:                   return 9735
         case .muteList:                     return 10000
         case .relayListMetadata:            return 10002
         case .bookmarksList:                return 10003
         case .authentication:               return 22242
+        case .nwcRequest:                   return 23194
+        case .nwcResponse:                  return 23195
         case .longformContent:              return 30023
+        case .liveActivities:                return 1311
+        case .liveChatMessage:              return 1311
         case .dateBasedCalendarEvent:       return 31922
         case .timeBasedCalendarEvent:       return 31923
         case .calendar:                     return 31924
@@ -218,11 +248,17 @@ public enum EventKind: RawRepresentable, CaseIterable, Codable, Equatable, Hasha
         case .giftWrap:                     return GiftWrapEvent.self
         case .report:                       return ReportEvent.self
         case .label:                        return LabelEvent.self
+        case .zapRequest:                   return LightningZapsRequestEvent.self
+        case .zapReceipt:                   return LightningZapsReceiptEvent.self
         case .muteList:                     return MuteListEvent.self
         case .relayListMetadata:            return RelayListMetadataEvent.self
         case .bookmarksList:                return BookmarksListEvent.self
         case .authentication:               return AuthenticationEvent.self
+        case .nwcRequest:                   return NWCRequestEvent.self
+        case .nwcResponse:                  return NWCResponseEvent.self
         case .longformContent:              return LongformContentEvent.self
+        case .liveActivities:               return LiveActivitiesEvent.self
+        case .liveChatMessage:              return LiveChatMessageEvent.self
         case .dateBasedCalendarEvent:       return DateBasedCalendarEvent.self
         case .timeBasedCalendarEvent:       return TimeBasedCalendarEvent.self
         case .calendar:                     return CalendarListEvent.self

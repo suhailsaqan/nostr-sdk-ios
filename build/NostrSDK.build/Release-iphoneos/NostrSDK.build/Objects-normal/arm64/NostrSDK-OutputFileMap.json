@@ -1,0 +1,420 @@
+{
+  "" : {
+    "const-values" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/NostrSDK-master.swiftconstvalues",
+    "dependencies" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/NostrSDK-master.d",
+    "diagnostics" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/NostrSDK-master.dia",
+    "emit-module-dependencies" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/NostrSDK-master-emit-module.d",
+    "emit-module-diagnostics" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/NostrSDK-master-emit-module.dia",
+    "swift-dependencies" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/NostrSDK-master.swiftdeps"
+  },
+  "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/Sources/NostrSDK/Bech32.swift" : {
+    "index-unit-output-path" : "/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/Bech32.o",
+    "llvm-bc" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/Bech32.bc",
+    "object" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/Bech32.o"
+  },
+  "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/Sources/NostrSDK/Bech32IdentifierType.swift" : {
+    "index-unit-output-path" : "/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/Bech32IdentifierType.o",
+    "llvm-bc" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/Bech32IdentifierType.bc",
+    "object" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/Bech32IdentifierType.o"
+  },
+  "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/Sources/NostrSDK/ContentSigning.swift" : {
+    "index-unit-output-path" : "/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/ContentSigning.o",
+    "llvm-bc" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/ContentSigning.bc",
+    "object" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/ContentSigning.o"
+  },
+  "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/Sources/NostrSDK/CustomEmoji.swift" : {
+    "index-unit-output-path" : "/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/CustomEmoji.o",
+    "llvm-bc" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/CustomEmoji.bc",
+    "object" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/CustomEmoji.o"
+  },
+  "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/Sources/NostrSDK/Data+Additions.swift" : {
+    "index-unit-output-path" : "/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/Data+Additions.o",
+    "llvm-bc" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/Data+Additions.bc",
+    "object" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/Data+Additions.o"
+  },
+  "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/Sources/NostrSDK/Data+Encoding.swift" : {
+    "index-unit-output-path" : "/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/Data+Encoding.o",
+    "llvm-bc" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/Data+Encoding.bc",
+    "object" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/Data+Encoding.o"
+  },
+  "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/Sources/NostrSDK/DataRequesting.swift" : {
+    "index-unit-output-path" : "/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/DataRequesting.o",
+    "llvm-bc" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/DataRequesting.bc",
+    "object" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/DataRequesting.o"
+  },
+  "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/Sources/NostrSDK/EventCreating.swift" : {
+    "index-unit-output-path" : "/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/EventCreating.o",
+    "llvm-bc" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/EventCreating.bc",
+    "object" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/EventCreating.o"
+  },
+  "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/Sources/NostrSDK/EventKind.swift" : {
+    "index-unit-output-path" : "/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/EventKind.o",
+    "llvm-bc" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/EventKind.bc",
+    "object" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/EventKind.o"
+  },
+  "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/Sources/NostrSDK/EventSerializer.swift" : {
+    "index-unit-output-path" : "/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/EventSerializer.o",
+    "llvm-bc" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/EventSerializer.bc",
+    "object" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/EventSerializer.o"
+  },
+  "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/Sources/NostrSDK/EventVerifying.swift" : {
+    "index-unit-output-path" : "/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/EventVerifying.o",
+    "llvm-bc" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/EventVerifying.bc",
+    "object" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/EventVerifying.o"
+  },
+  "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/Sources/NostrSDK/Events/AuthenticationEvent.swift" : {
+    "index-unit-output-path" : "/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/AuthenticationEvent.o",
+    "llvm-bc" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/AuthenticationEvent.bc",
+    "object" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/AuthenticationEvent.o"
+  },
+  "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/Sources/NostrSDK/Events/BookmarksListEvent.swift" : {
+    "index-unit-output-path" : "/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/BookmarksListEvent.o",
+    "llvm-bc" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/BookmarksListEvent.bc",
+    "object" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/BookmarksListEvent.o"
+  },
+  "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/Sources/NostrSDK/Events/Calendars/CalendarEventInterpreting.swift" : {
+    "index-unit-output-path" : "/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/CalendarEventInterpreting.o",
+    "llvm-bc" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/CalendarEventInterpreting.bc",
+    "object" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/CalendarEventInterpreting.o"
+  },
+  "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/Sources/NostrSDK/Events/Calendars/CalendarEventParticipant.swift" : {
+    "index-unit-output-path" : "/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/CalendarEventParticipant.o",
+    "llvm-bc" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/CalendarEventParticipant.bc",
+    "object" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/CalendarEventParticipant.o"
+  },
+  "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/Sources/NostrSDK/Events/Calendars/CalendarEventRSVP.swift" : {
+    "index-unit-output-path" : "/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/CalendarEventRSVP.o",
+    "llvm-bc" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/CalendarEventRSVP.bc",
+    "object" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/CalendarEventRSVP.o"
+  },
+  "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/Sources/NostrSDK/Events/Calendars/CalendarEventRSVPFreebusy.swift" : {
+    "index-unit-output-path" : "/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/CalendarEventRSVPFreebusy.o",
+    "llvm-bc" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/CalendarEventRSVPFreebusy.bc",
+    "object" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/CalendarEventRSVPFreebusy.o"
+  },
+  "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/Sources/NostrSDK/Events/Calendars/CalendarEventRSVPStatus.swift" : {
+    "index-unit-output-path" : "/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/CalendarEventRSVPStatus.o",
+    "llvm-bc" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/CalendarEventRSVPStatus.bc",
+    "object" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/CalendarEventRSVPStatus.o"
+  },
+  "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/Sources/NostrSDK/Events/Calendars/CalendarListEvent.swift" : {
+    "index-unit-output-path" : "/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/CalendarListEvent.o",
+    "llvm-bc" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/CalendarListEvent.bc",
+    "object" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/CalendarListEvent.o"
+  },
+  "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/Sources/NostrSDK/Events/Calendars/DateBasedCalendarEvent.swift" : {
+    "index-unit-output-path" : "/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/DateBasedCalendarEvent.o",
+    "llvm-bc" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/DateBasedCalendarEvent.bc",
+    "object" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/DateBasedCalendarEvent.o"
+  },
+  "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/Sources/NostrSDK/Events/Calendars/TimeBasedCalendarEvent.swift" : {
+    "index-unit-output-path" : "/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/TimeBasedCalendarEvent.o",
+    "llvm-bc" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/TimeBasedCalendarEvent.bc",
+    "object" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/TimeBasedCalendarEvent.o"
+  },
+  "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/Sources/NostrSDK/Events/Calendars/TimeOmittedDate.swift" : {
+    "index-unit-output-path" : "/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/TimeOmittedDate.o",
+    "llvm-bc" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/TimeOmittedDate.bc",
+    "object" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/TimeOmittedDate.o"
+  },
+  "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/Sources/NostrSDK/Events/DeletionEvent.swift" : {
+    "index-unit-output-path" : "/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/DeletionEvent.o",
+    "llvm-bc" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/DeletionEvent.bc",
+    "object" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/DeletionEvent.o"
+  },
+  "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/Sources/NostrSDK/Events/DirectMessageEvent.swift" : {
+    "index-unit-output-path" : "/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/DirectMessageEvent.o",
+    "llvm-bc" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/DirectMessageEvent.bc",
+    "object" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/DirectMessageEvent.o"
+  },
+  "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/Sources/NostrSDK/Events/FollowListEvent.swift" : {
+    "index-unit-output-path" : "/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/FollowListEvent.o",
+    "llvm-bc" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/FollowListEvent.bc",
+    "object" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/FollowListEvent.o"
+  },
+  "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/Sources/NostrSDK/Events/GenericRepostEvent.swift" : {
+    "index-unit-output-path" : "/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/GenericRepostEvent.o",
+    "llvm-bc" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/GenericRepostEvent.bc",
+    "object" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/GenericRepostEvent.o"
+  },
+  "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/Sources/NostrSDK/Events/GiftWrap/GiftWrapEvent.swift" : {
+    "index-unit-output-path" : "/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/GiftWrapEvent.o",
+    "llvm-bc" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/GiftWrapEvent.bc",
+    "object" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/GiftWrapEvent.o"
+  },
+  "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/Sources/NostrSDK/Events/GiftWrap/SealEvent.swift" : {
+    "index-unit-output-path" : "/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/SealEvent.o",
+    "llvm-bc" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/SealEvent.bc",
+    "object" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/SealEvent.o"
+  },
+  "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/Sources/NostrSDK/Events/LabelEvent.swift" : {
+    "index-unit-output-path" : "/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/LabelEvent.o",
+    "llvm-bc" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/LabelEvent.bc",
+    "object" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/LabelEvent.o"
+  },
+  "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/Sources/NostrSDK/Events/LegacyEncryptedDirectMessageEvent.swift" : {
+    "index-unit-output-path" : "/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/LegacyEncryptedDirectMessageEvent.o",
+    "llvm-bc" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/LegacyEncryptedDirectMessageEvent.bc",
+    "object" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/LegacyEncryptedDirectMessageEvent.o"
+  },
+  "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/Sources/NostrSDK/Events/LightningZaps/LightningZapsReceiptEvent.swift" : {
+    "index-unit-output-path" : "/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/LightningZapsReceiptEvent.o",
+    "llvm-bc" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/LightningZapsReceiptEvent.bc",
+    "object" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/LightningZapsReceiptEvent.o"
+  },
+  "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/Sources/NostrSDK/Events/LightningZaps/LightningZapsRequestEvent.swift" : {
+    "index-unit-output-path" : "/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/LightningZapsRequestEvent.o",
+    "llvm-bc" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/LightningZapsRequestEvent.bc",
+    "object" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/LightningZapsRequestEvent.o"
+  },
+  "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/Sources/NostrSDK/Events/LightningZaps/NWCRequestEvent.swift" : {
+    "index-unit-output-path" : "/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/NWCRequestEvent.o",
+    "llvm-bc" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/NWCRequestEvent.bc",
+    "object" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/NWCRequestEvent.o"
+  },
+  "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/Sources/NostrSDK/Events/LightningZaps/NWCResponseEvent.swift" : {
+    "index-unit-output-path" : "/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/NWCResponseEvent.o",
+    "llvm-bc" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/NWCResponseEvent.bc",
+    "object" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/NWCResponseEvent.o"
+  },
+  "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/Sources/NostrSDK/Events/LightningZaps/NostrRelay.swift" : {
+    "index-unit-output-path" : "/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/NostrRelay.o",
+    "llvm-bc" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/NostrRelay.bc",
+    "object" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/NostrRelay.o"
+  },
+  "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/Sources/NostrSDK/Events/LiveActivities/LiveActivitiesEvent.swift" : {
+    "index-unit-output-path" : "/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/LiveActivitiesEvent.o",
+    "llvm-bc" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/LiveActivitiesEvent.bc",
+    "object" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/LiveActivitiesEvent.o"
+  },
+  "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/Sources/NostrSDK/Events/LiveActivities/LiveActivitiesEventParticipant.swift" : {
+    "index-unit-output-path" : "/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/LiveActivitiesEventParticipant.o",
+    "llvm-bc" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/LiveActivitiesEventParticipant.bc",
+    "object" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/LiveActivitiesEventParticipant.o"
+  },
+  "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/Sources/NostrSDK/Events/LiveActivities/LiveChatMessageEvent.swift" : {
+    "index-unit-output-path" : "/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/LiveChatMessageEvent.o",
+    "llvm-bc" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/LiveChatMessageEvent.bc",
+    "object" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/LiveChatMessageEvent.o"
+  },
+  "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/Sources/NostrSDK/Events/LongformContentEvent.swift" : {
+    "index-unit-output-path" : "/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/LongformContentEvent.o",
+    "llvm-bc" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/LongformContentEvent.bc",
+    "object" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/LongformContentEvent.o"
+  },
+  "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/Sources/NostrSDK/Events/MetadataEvent.swift" : {
+    "index-unit-output-path" : "/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/MetadataEvent.o",
+    "llvm-bc" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/MetadataEvent.bc",
+    "object" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/MetadataEvent.o"
+  },
+  "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/Sources/NostrSDK/Events/MuteListEvent.swift" : {
+    "index-unit-output-path" : "/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/MuteListEvent.o",
+    "llvm-bc" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/MuteListEvent.bc",
+    "object" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/MuteListEvent.o"
+  },
+  "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/Sources/NostrSDK/Events/NonParameterizedReplaceableEvent.swift" : {
+    "index-unit-output-path" : "/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/NonParameterizedReplaceableEvent.o",
+    "llvm-bc" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/NonParameterizedReplaceableEvent.bc",
+    "object" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/NonParameterizedReplaceableEvent.o"
+  },
+  "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/Sources/NostrSDK/Events/NostrEvent.swift" : {
+    "index-unit-output-path" : "/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/NostrEvent.o",
+    "llvm-bc" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/NostrEvent.bc",
+    "object" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/NostrEvent.o"
+  },
+  "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/Sources/NostrSDK/Events/ParameterizedReplaceableEvent.swift" : {
+    "index-unit-output-path" : "/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/ParameterizedReplaceableEvent.o",
+    "llvm-bc" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/ParameterizedReplaceableEvent.bc",
+    "object" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/ParameterizedReplaceableEvent.o"
+  },
+  "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/Sources/NostrSDK/Events/ReactionEvent.swift" : {
+    "index-unit-output-path" : "/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/ReactionEvent.o",
+    "llvm-bc" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/ReactionEvent.bc",
+    "object" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/ReactionEvent.o"
+  },
+  "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/Sources/NostrSDK/Events/RelayListMetadataEvent.swift" : {
+    "index-unit-output-path" : "/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/RelayListMetadataEvent.o",
+    "llvm-bc" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/RelayListMetadataEvent.bc",
+    "object" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/RelayListMetadataEvent.o"
+  },
+  "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/Sources/NostrSDK/Events/ReplaceableEvent.swift" : {
+    "index-unit-output-path" : "/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/ReplaceableEvent.o",
+    "llvm-bc" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/ReplaceableEvent.bc",
+    "object" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/ReplaceableEvent.o"
+  },
+  "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/Sources/NostrSDK/Events/ReportEvent.swift" : {
+    "index-unit-output-path" : "/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/ReportEvent.o",
+    "llvm-bc" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/ReportEvent.bc",
+    "object" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/ReportEvent.o"
+  },
+  "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/Sources/NostrSDK/Events/Tags/AlternativeSummaryTag.swift" : {
+    "index-unit-output-path" : "/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/AlternativeSummaryTag.o",
+    "llvm-bc" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/AlternativeSummaryTag.bc",
+    "object" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/AlternativeSummaryTag.o"
+  },
+  "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/Sources/NostrSDK/Events/Tags/ContentWarningTag.swift" : {
+    "index-unit-output-path" : "/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/ContentWarningTag.o",
+    "llvm-bc" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/ContentWarningTag.bc",
+    "object" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/ContentWarningTag.o"
+  },
+  "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/Sources/NostrSDK/Events/Tags/EventCoordinates.swift" : {
+    "index-unit-output-path" : "/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/EventCoordinates.o",
+    "llvm-bc" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/EventCoordinates.bc",
+    "object" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/EventCoordinates.o"
+  },
+  "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/Sources/NostrSDK/Events/Tags/EventTag.swift" : {
+    "index-unit-output-path" : "/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/EventTag.o",
+    "llvm-bc" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/EventTag.bc",
+    "object" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/EventTag.o"
+  },
+  "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/Sources/NostrSDK/Events/Tags/ExpirationTag.swift" : {
+    "index-unit-output-path" : "/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/ExpirationTag.o",
+    "llvm-bc" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/ExpirationTag.bc",
+    "object" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/ExpirationTag.o"
+  },
+  "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/Sources/NostrSDK/Events/Tags/HashtagInterpreting.swift" : {
+    "index-unit-output-path" : "/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/HashtagInterpreting.o",
+    "llvm-bc" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/HashtagInterpreting.bc",
+    "object" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/HashtagInterpreting.o"
+  },
+  "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/Sources/NostrSDK/Events/Tags/PrivateTagInterpreting.swift" : {
+    "index-unit-output-path" : "/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/PrivateTagInterpreting.o",
+    "llvm-bc" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/PrivateTagInterpreting.bc",
+    "object" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/PrivateTagInterpreting.o"
+  },
+  "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/Sources/NostrSDK/Events/Tags/PubkeyProviding.swift" : {
+    "index-unit-output-path" : "/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/PubkeyProviding.o",
+    "llvm-bc" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/PubkeyProviding.bc",
+    "object" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/PubkeyProviding.o"
+  },
+  "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/Sources/NostrSDK/Events/Tags/PubkeyTag.swift" : {
+    "index-unit-output-path" : "/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/PubkeyTag.o",
+    "llvm-bc" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/PubkeyTag.bc",
+    "object" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/PubkeyTag.o"
+  },
+  "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/Sources/NostrSDK/Events/Tags/ReferenceTagInterpreting.swift" : {
+    "index-unit-output-path" : "/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/ReferenceTagInterpreting.o",
+    "llvm-bc" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/ReferenceTagInterpreting.bc",
+    "object" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/ReferenceTagInterpreting.o"
+  },
+  "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/Sources/NostrSDK/Events/Tags/RelayProviding.swift" : {
+    "index-unit-output-path" : "/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/RelayProviding.o",
+    "llvm-bc" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/RelayProviding.bc",
+    "object" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/RelayProviding.o"
+  },
+  "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/Sources/NostrSDK/Events/Tags/TitleTagInterpreting.swift" : {
+    "index-unit-output-path" : "/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/TitleTagInterpreting.o",
+    "llvm-bc" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/TitleTagInterpreting.bc",
+    "object" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/TitleTagInterpreting.o"
+  },
+  "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/Sources/NostrSDK/Events/TextNoteEvent.swift" : {
+    "index-unit-output-path" : "/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/TextNoteEvent.o",
+    "llvm-bc" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/TextNoteEvent.bc",
+    "object" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/TextNoteEvent.o"
+  },
+  "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/Sources/NostrSDK/Events/TextNoteRepostEvent.swift" : {
+    "index-unit-output-path" : "/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/TextNoteRepostEvent.o",
+    "llvm-bc" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/TextNoteRepostEvent.bc",
+    "object" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/TextNoteRepostEvent.o"
+  },
+  "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/Sources/NostrSDK/Filter.swift" : {
+    "index-unit-output-path" : "/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/Filter.o",
+    "llvm-bc" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/Filter.bc",
+    "object" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/Filter.o"
+  },
+  "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/Sources/NostrSDK/Helpers/AnyEncodable.swift" : {
+    "index-unit-output-path" : "/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/AnyEncodable.o",
+    "llvm-bc" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/AnyEncodable.bc",
+    "object" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/AnyEncodable.o"
+  },
+  "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/Sources/NostrSDK/Helpers/Decrypt.swift" : {
+    "index-unit-output-path" : "/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/Decrypt.o",
+    "llvm-bc" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/Decrypt.bc",
+    "object" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/Decrypt.o"
+  },
+  "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/Sources/NostrSDK/Helpers/String+Additions.swift" : {
+    "index-unit-output-path" : "/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/String+Additions.o",
+    "llvm-bc" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/String+Additions.bc",
+    "object" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/String+Additions.o"
+  },
+  "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/Sources/NostrSDK/Keys.swift" : {
+    "index-unit-output-path" : "/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/Keys.o",
+    "llvm-bc" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/Keys.bc",
+    "object" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/Keys.o"
+  },
+  "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/Sources/NostrSDK/LegacyDirectMessageEncrypting.swift" : {
+    "index-unit-output-path" : "/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/LegacyDirectMessageEncrypting.o",
+    "llvm-bc" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/LegacyDirectMessageEncrypting.bc",
+    "object" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/LegacyDirectMessageEncrypting.o"
+  },
+  "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/Sources/NostrSDK/Loggers.swift" : {
+    "index-unit-output-path" : "/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/Loggers.o",
+    "llvm-bc" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/Loggers.bc",
+    "object" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/Loggers.o"
+  },
+  "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/Sources/NostrSDK/MetadataCoding.swift" : {
+    "index-unit-output-path" : "/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/MetadataCoding.o",
+    "llvm-bc" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/MetadataCoding.bc",
+    "object" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/MetadataCoding.o"
+  },
+  "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/Sources/NostrSDK/NIP05Validating.swift" : {
+    "index-unit-output-path" : "/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/NIP05Validating.o",
+    "llvm-bc" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/NIP05Validating.bc",
+    "object" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/NIP05Validating.o"
+  },
+  "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/Sources/NostrSDK/NIP44v2Encrypting.swift" : {
+    "index-unit-output-path" : "/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/NIP44v2Encrypting.o",
+    "llvm-bc" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/NIP44v2Encrypting.bc",
+    "object" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/NIP44v2Encrypting.o"
+  },
+  "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/Sources/NostrSDK/Relay.swift" : {
+    "index-unit-output-path" : "/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/Relay.o",
+    "llvm-bc" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/Relay.bc",
+    "object" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/Relay.o"
+  },
+  "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/Sources/NostrSDK/RelayInfo.swift" : {
+    "index-unit-output-path" : "/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/RelayInfo.o",
+    "llvm-bc" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/RelayInfo.bc",
+    "object" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/RelayInfo.o"
+  },
+  "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/Sources/NostrSDK/RelayPool.swift" : {
+    "index-unit-output-path" : "/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/RelayPool.o",
+    "llvm-bc" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/RelayPool.bc",
+    "object" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/RelayPool.o"
+  },
+  "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/Sources/NostrSDK/RelayRequest.swift" : {
+    "index-unit-output-path" : "/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/RelayRequest.o",
+    "llvm-bc" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/RelayRequest.bc",
+    "object" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/RelayRequest.o"
+  },
+  "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/Sources/NostrSDK/RelayResponse.swift" : {
+    "index-unit-output-path" : "/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/RelayResponse.o",
+    "llvm-bc" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/RelayResponse.bc",
+    "object" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/RelayResponse.o"
+  },
+  "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/Sources/NostrSDK/RelayURLValidating.swift" : {
+    "index-unit-output-path" : "/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/RelayURLValidating.o",
+    "llvm-bc" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/RelayURLValidating.bc",
+    "object" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/RelayURLValidating.o"
+  },
+  "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/Sources/NostrSDK/SignatureVerifying.swift" : {
+    "index-unit-output-path" : "/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/SignatureVerifying.o",
+    "llvm-bc" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/SignatureVerifying.bc",
+    "object" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/SignatureVerifying.o"
+  },
+  "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/Sources/NostrSDK/String+Hex.swift" : {
+    "index-unit-output-path" : "/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/String+Hex.o",
+    "llvm-bc" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/String+Hex.bc",
+    "object" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/String+Hex.o"
+  },
+  "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/Sources/NostrSDK/Tag.swift" : {
+    "index-unit-output-path" : "/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/Tag.o",
+    "llvm-bc" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/Tag.bc",
+    "object" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/Tag.o"
+  },
+  "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/Sources/NostrSDK/WebSocket.swift" : {
+    "index-unit-output-path" : "/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/WebSocket.o",
+    "llvm-bc" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/WebSocket.bc",
+    "object" : "/Users/suhailsaqan/Documents/GitHub/nostr-sdk-ios/build/NostrSDK.build/Release-iphoneos/NostrSDK.build/Objects-normal/arm64/WebSocket.o"
+  }
+}
