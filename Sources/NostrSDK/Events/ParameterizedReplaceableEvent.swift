@@ -1,6 +1,6 @@
 //
 //  ParameterizedReplaceableEvent.swift
-//  
+//
 //
 //  Created by Terry Yiu on 12/23/23.
 //
@@ -8,22 +8,44 @@
 import Foundation
 
 public protocol ParameterizedReplaceableEvent: ReplaceableEvent, MetadataCoding {}
-public extension ParameterizedReplaceableEvent {
+extension ParameterizedReplaceableEvent {
     /// The identifier of the event. For parameterized replaceable events, this identifier remains stable across replacements.
     /// This identifier is represented by the "d" tag, which is distinctly different from the `id` field on ``NostrEvent``.
-    var identifier: String? {
+    public var identifier: String? {
         firstValueForTagName(.identifier)
     }
 
-    func replaceableEventCoordinates(relayURL: URL? = nil) -> EventCoordinates? {
-        guard kind.isParameterizedReplaceable, let identifier, let publicKey = PublicKey(hex: pubkey) else {
+    public func replaceableEventCoordinates(relayURL: URL? = nil) -> EventCoordinates? {
+        guard kind.isParameterizedReplaceable else {
+            print("DEBUG: Kind is not parameterized replaceable")
             return nil
         }
 
-        return try? EventCoordinates(kind: kind, pubkey: publicKey, identifier: identifier, relayURL: relayURL)
+        guard let identifier = identifier else {
+            print("DEBUG: Identifier is nil")
+            return nil
+        }
+
+        guard let publicKey = PublicKey(hex: pubkey) else {
+            print("DEBUG: Failed to create PublicKey from pubkey: \(pubkey)")
+            return nil
+        }
+
+        do {
+            let coordinates = try EventCoordinates(
+                kind: kind, pubkey: publicKey, identifier: identifier, relayURL: relayURL)
+            return coordinates
+        } catch {
+            print("DEBUG: Failed to create EventCoordinates: \(error)")
+            return nil
+        }
     }
 
-    func shareableEventCoordinates(relayURLStrings: [String]? = nil, includeAuthor: Bool = true, includeKind: Bool = true) throws -> String {
-        try shareableEventCoordinates(relayURLStrings: relayURLStrings, includeAuthor: includeAuthor, includeKind: includeKind, identifier: identifier ?? "")
+    public func shareableEventCoordinates(
+        relayURLStrings: [String]? = nil, includeAuthor: Bool = true, includeKind: Bool = true
+    ) throws -> String {
+        try shareableEventCoordinates(
+            relayURLStrings: relayURLStrings, includeAuthor: includeAuthor,
+            includeKind: includeKind, identifier: identifier ?? "")
     }
 }

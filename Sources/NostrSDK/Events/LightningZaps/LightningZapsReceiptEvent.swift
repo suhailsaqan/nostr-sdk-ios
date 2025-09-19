@@ -116,12 +116,12 @@ public final class LightningZapsReceiptEvent: NostrEvent {
     }
 
     /// Decodes the receipt's description (from the `description` tag) into a Lightning Zap Request.
-    public var description: LightningZapsRequestEvent? {
+    public var description: LightningZapRequestEvent? {
         guard let descriptionString = firstValueForRawTagName("description")?.data(using: .utf8)
         else {
             return nil
         }
-        return try? JSONDecoder().decode(LightningZapsRequestEvent.self, from: descriptionString)
+        return try? JSONDecoder().decode(LightningZapRequestEvent.self, from: descriptionString)
     }
 
     public var descriptionString: String? {

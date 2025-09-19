@@ -1,6 +1,6 @@
 //
 //  NostrEvent.swift
-//  
+//
 //
 //  Created by Bryan Montz on 5/22/23.
 //
@@ -10,35 +10,33 @@ import Foundation
 /// A structure that describes a Nostr event.
 ///
 /// > Note: [NIP-01 Specification](https://github.com/nostr-protocol/nips/blob/master/01.md#events-and-signatures)
-public class NostrEvent: Codable, Equatable, Hashable, AlternativeSummaryTagInterpreting, ContentWarningTagInterpreting, ExpirationTagInterpreting, LabelTagInterpreting {
+public class NostrEvent: Codable, Equatable, Hashable, AlternativeSummaryTagInterpreting,
+    ContentWarningTagInterpreting, ExpirationTagInterpreting, LabelTagInterpreting
+{
     public static func == (lhs: NostrEvent, rhs: NostrEvent) -> Bool {
-        lhs.id == rhs.id &&
-        lhs.pubkey == rhs.pubkey &&
-        lhs.createdAt == rhs.createdAt &&
-        lhs.kind == rhs.kind &&
-        lhs.tags == rhs.tags &&
-        lhs.content == rhs.content &&
-        lhs.signature == rhs.signature
+        lhs.id == rhs.id && lhs.pubkey == rhs.pubkey && lhs.createdAt == rhs.createdAt
+            && lhs.kind == rhs.kind && lhs.tags == rhs.tags && lhs.content == rhs.content
+            && lhs.signature == rhs.signature
     }
-    
+
     /// 32-byte, lowercase, hex-encoded sha256 of the serialized event data.
     public let id: String
-    
+
     /// 32-byte, lowercase, hex-encoded public key of the event creator.
     public let pubkey: String
-    
+
     /// Unix timestamp in seconds of when the event is created.
     public let createdAt: Int64
-    
+
     /// The event kind.
     public let kind: EventKind
-    
+
     /// List of ``Tag`` objects.
     public let tags: [Tag]
-    
+
     /// Arbitrary string.
     public let content: String
-    
+
     /// 64-byte hex of the signature of the sha256 hash of the serialized event data, which is the same as the `id` field.
     public let signature: String?
 
@@ -52,7 +50,10 @@ public class NostrEvent: Codable, Equatable, Hashable, AlternativeSummaryTagInte
         case signature = "sig"
     }
 
-    init(id: String, pubkey: String, createdAt: Int64, kind: EventKind, tags: [Tag], content: String, signature: String?) {
+    init(
+        id: String, pubkey: String, createdAt: Int64, kind: EventKind, tags: [Tag], content: String,
+        signature: String?
+    ) {
         self.id = id
         self.pubkey = pubkey
         self.createdAt = createdAt
@@ -63,32 +64,40 @@ public class NostrEvent: Codable, Equatable, Hashable, AlternativeSummaryTagInte
     }
 
     /// Creates a ``NostrEvent`` rumor, which is an event with a `nil` signature.
-    required init(kind: EventKind, content: String, tags: [Tag] = [], createdAt: Int64 = Int64(Date.now.timeIntervalSince1970), pubkey: String) {
+    required init(
+        kind: EventKind, content: String, tags: [Tag] = [],
+        createdAt: Int64 = Int64(Date.now.timeIntervalSince1970), pubkey: String
+    ) {
         self.kind = kind
         self.content = content
         self.tags = tags
         self.createdAt = createdAt
         self.pubkey = pubkey
-        id = EventSerializer.identifierForEvent(withPubkey: pubkey,
-                                                createdAt: createdAt,
-                                                kind: kind.rawValue,
-                                                tags: tags,
-                                                content: content)
+        id = EventSerializer.identifierForEvent(
+            withPubkey: pubkey,
+            createdAt: createdAt,
+            kind: kind.rawValue,
+            tags: tags,
+            content: content)
         signature = nil
     }
 
     /// Creates a signed ``NostrEvent``.
-    required init(kind: EventKind, content: String, tags: [Tag] = [], createdAt: Int64 = Int64(Date.now.timeIntervalSince1970), signedBy keypair: Keypair) throws {
+    required init(
+        kind: EventKind, content: String, tags: [Tag] = [],
+        createdAt: Int64 = Int64(Date.now.timeIntervalSince1970), signedBy keypair: Keypair
+    ) throws {
         self.kind = kind
         self.content = content
         self.tags = tags
         self.createdAt = createdAt
         pubkey = keypair.publicKey.hex
-        id = EventSerializer.identifierForEvent(withPubkey: keypair.publicKey.hex,
-                                                createdAt: createdAt,
-                                                kind: kind.rawValue,
-                                                tags: tags,
-                                                content: content)
+        id = EventSerializer.identifierForEvent(
+            withPubkey: keypair.publicKey.hex,
+            createdAt: createdAt,
+            kind: kind.rawValue,
+            tags: tags,
+            content: content)
         signature = try keypair.privateKey.signatureForContent(id)
     }
 
@@ -102,27 +111,34 @@ public class NostrEvent: Codable, Equatable, Hashable, AlternativeSummaryTagInte
         hasher.combine(signature)
     }
 
+    /// Returns the first value for a given tag name
+    public func firstValue(forTag tagName: String) -> String? {
+        return tags.first(where: { $0.name == tagName })?.value
+    }
+
     /// The date the event was created.
     public var createdDate: Date {
         Date(timeIntervalSince1970: TimeInterval(createdAt))
     }
-    
+
     /// The event serialized, so that it can be signed.
     public var serialized: String {
-        EventSerializer.serializedEvent(withPubkey: pubkey,
-                                        createdAt: createdAt,
-                                        kind: kind.rawValue,
-                                        tags: tags,
-                                        content: content)
+        EventSerializer.serializedEvent(
+            withPubkey: pubkey,
+            createdAt: createdAt,
+            kind: kind.rawValue,
+            tags: tags,
+            content: content)
     }
-    
+
     /// The event.id calculated as a SHA256 of the serialized event. See ``EventSerializer``.
     public var calculatedId: String {
-        EventSerializer.identifierForEvent(withPubkey: pubkey,
-                                           createdAt: createdAt,
-                                           kind: kind.rawValue,
-                                           tags: tags,
-                                           content: content)
+        EventSerializer.identifierForEvent(
+            withPubkey: pubkey,
+            createdAt: createdAt,
+            kind: kind.rawValue,
+            tags: tags,
+            content: content)
     }
 
     /// The event is a rumor if it is an unsigned event, where `signature` is `nil`.
@@ -132,7 +148,9 @@ public class NostrEvent: Codable, Equatable, Hashable, AlternativeSummaryTagInte
 
     /// Creates a copy of this event and makes it into a rumor ``NostrEvent``, where `signature` is `nil`.
     public var rumor: NostrEvent {
-        NostrEvent(id: id, pubkey: pubkey, createdAt: createdAt, kind: kind, tags: tags, content: content, signature: nil)
+        NostrEvent(
+            id: id, pubkey: pubkey, createdAt: createdAt, kind: kind, tags: tags, content: content,
+            signature: nil)
     }
 
     /// Pubkeys referenced in this event.
@@ -154,17 +172,17 @@ public class NostrEvent: Codable, Equatable, Hashable, AlternativeSummaryTagInte
     public func allTags(withTagName tagName: TagName) -> [Tag] {
         tags.filter { $0.name == tagName.rawValue }
     }
-    
+
     /// The first String value for the provided ``TagName``, if it exists.
     public func firstValueForTagName(_ tag: TagName) -> String? {
         firstValueForRawTagName(tag.rawValue)
     }
-    
+
     /// The first String value for the provided raw tag name, if it exists.
     public func firstValueForRawTagName(_ tagName: String) -> String? {
         tags.first(where: { $0.name == tagName })?.value
     }
-    
+
     /// All values for tags with the provided name.
     /// - Parameter tag: The tag name to filter.
     /// - Returns: The values associated with the tags of the provided name.
@@ -199,7 +217,9 @@ extension NostrEvent: MetadataCoding, RelayURLValidating {
     /// - Throws: `URLError.Code.badURL`, `RelayURLError.invalidScheme`, `TLVCodingError.failedToEncode`
     ///
     /// > Note: [NIP-19 bech32-encoded entities](https://github.com/nostr-protocol/nips/blob/master/19.md)
-    public func shareableEventIdentifier(relayURLStrings: [String]? = nil, excludeAuthor: Bool = false, excludeKind: Bool = false) throws -> String {
+    public func shareableEventIdentifier(
+        relayURLStrings: [String]? = nil, excludeAuthor: Bool = false, excludeKind: Bool = false
+    ) throws -> String {
         let validatedRelayURLStrings = try relayURLStrings?.map {
             try validateRelayURLString($0)
         }.map { $0.absoluteString }
@@ -289,9 +309,11 @@ public protocol NostrEventBuilding {
     func build(pubkey: String) -> EventType
 }
 
-public extension NostrEvent {
+extension NostrEvent {
     /// Builder of a ``NostrEvent`` of type `T`.
-    class Builder<T: NostrEvent>: NostrEventBuilding, AlternativeSummaryTagBuilding, ContentWarningTagBuilding, ExpirationTagBuilding, LabelTagBuilding {
+    public class Builder<T: NostrEvent>: NostrEventBuilding, AlternativeSummaryTagBuilding,
+        ContentWarningTagBuilding, ExpirationTagBuilding, LabelTagBuilding
+    {
         public typealias EventType = T
 
         /// The event kind.
@@ -380,3 +402,4 @@ public extension NostrEvent {
         }
     }
 }
+

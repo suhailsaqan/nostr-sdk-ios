@@ -1,6 +1,6 @@
 //
 //  EventKind.swift
-//  
+//
 //
 //  Created by Bryan Montz on 5/22/23.
 //
@@ -16,12 +16,12 @@ public enum EventKind: RawRepresentable, CaseIterable, Codable, Equatable, Hasha
     ///
     /// See [NIP-01](https://github.com/nostr-protocol/nips/blob/master/01.md)
     case metadata
-    
+
     /// The content is set to the plaintext content of a note (anything the user wants to say). Content that must be parsed, such as Markdown and HTML, should not be used. Clients should also not parse content as those.
     ///
     /// See [NIP-01](https://github.com/nostr-protocol/nips/blob/master/01.md)
     case textNote
-    
+
     /// This kind of event should have a list of p tags, one for each of the followed/known profiles one is following.
     /// > Note: The `content` can be anything and should be ignored.
     ///
@@ -34,7 +34,7 @@ public enum EventKind: RawRepresentable, CaseIterable, Codable, Equatable, Hasha
     /// > Warning: Deprecated in favor of [NIP-17 - Private Direct Messages](https://github.com/nostr-protocol/nips/blob/master/17.md).
     @available(*, deprecated, message: "Deprecated in favor of NIP-17 - Private Direct Messages.")
     case legacyEncryptedDirectMessage
-    
+
     /// This kind of event indicates that the author requests that the events in the included
     /// tags should be deleted.
     /// > Note: This event can only *request* that the listed events be deleted. In reality, they
@@ -42,7 +42,7 @@ public enum EventKind: RawRepresentable, CaseIterable, Codable, Equatable, Hasha
     ///
     /// See [NIP-09 - Event Deletion](https://github.com/nostr-protocol/nips/blob/master/09.md)
     case deletion
-    
+
     /// This kind of note is used to signal to followers that another event is worth reading.
     ///
     /// > Note: The reposted event must be a kind 1 text note.
@@ -91,12 +91,12 @@ public enum EventKind: RawRepresentable, CaseIterable, Codable, Equatable, Hasha
     ///
     /// See [NIP-32 Labeling](https://github.com/nostr-protocol/nips/blob/master/32.md).
     case label
-    
+
     ///
     ///
     /// See [NIP-57 Lightning Zaps](https://github.com/nostr-protocol/nips/blob/master/57.md).
     case zapRequest
-    
+
     ///
     ///
     /// See [NIP-57 Lightning Zaps](https://github.com/nostr-protocol/nips/blob/master/57.md).
@@ -135,7 +135,7 @@ public enum EventKind: RawRepresentable, CaseIterable, Codable, Equatable, Hasha
     case liveActivities
 
     case liveChatMessage
-    
+
     /// This kind of event represents an occurrence that spans between a start date and end date.
     /// See [NIP-52 - Date-Based Calendar Event](https://github.com/nostr-protocol/nips/blob/master/52.md#calendar-events-1).
     case dateBasedCalendarEvent
@@ -186,12 +186,13 @@ public enum EventKind: RawRepresentable, CaseIterable, Codable, Equatable, Hasha
         .dateBasedCalendarEvent,
         .timeBasedCalendarEvent,
         .calendar,
-        .calendarEventRSVP
+        .calendarEventRSVP,
     ]
 
     public init(rawValue: Int) {
-        self = Self.allCases.first { $0.rawValue == rawValue }
-               ?? .unknown(rawValue)
+        self =
+            Self.allCases.first { $0.rawValue == rawValue }
+            ?? .unknown(rawValue)
     }
 
     public func hash(into hasher: inout Hasher) {
@@ -200,70 +201,70 @@ public enum EventKind: RawRepresentable, CaseIterable, Codable, Equatable, Hasha
 
     public var rawValue: RawValue {
         switch self {
-        case .metadata:                     return 0
-        case .textNote:                     return 1
-        case .followList:                   return 3
+        case .metadata: return 0
+        case .textNote: return 1
+        case .followList: return 3
         case .legacyEncryptedDirectMessage: return 4
-        case .deletion:                     return 5
-        case .repost:                       return 6
-        case .reaction:                     return 7
-        case .seal:                         return 13
-        case .directMessage:                return 14
-        case .genericRepost:                return 16
-        case .giftWrap:                     return 1059
-        case .report:                       return 1984
-        case .label:                        return 1985
-        case .zapRequest:                   return 9734
-        case .zapReceipt:                   return 9735
-        case .muteList:                     return 10000
-        case .relayListMetadata:            return 10002
-        case .bookmarksList:                return 10003
-        case .authentication:               return 22242
-        case .nwcRequest:                   return 23194
-        case .nwcResponse:                  return 23195
-        case .longformContent:              return 30023
-        case .liveActivities:                return 1311
-        case .liveChatMessage:              return 1311
-        case .dateBasedCalendarEvent:       return 31922
-        case .timeBasedCalendarEvent:       return 31923
-        case .calendar:                     return 31924
-        case .calendarEventRSVP:            return 31925
-        case let .unknown(value):           return value
+        case .deletion: return 5
+        case .repost: return 6
+        case .reaction: return 7
+        case .seal: return 13
+        case .directMessage: return 14
+        case .genericRepost: return 16
+        case .giftWrap: return 1059
+        case .report: return 1984
+        case .label: return 1985
+        case .zapRequest: return 9734
+        case .zapReceipt: return 9735
+        case .muteList: return 10000
+        case .relayListMetadata: return 10002
+        case .bookmarksList: return 10003
+        case .authentication: return 22242
+        case .nwcRequest: return 23194
+        case .nwcResponse: return 23195
+        case .longformContent: return 30023
+        case .liveActivities: return 30311
+        case .liveChatMessage: return 1311
+        case .dateBasedCalendarEvent: return 31922
+        case .timeBasedCalendarEvent: return 31923
+        case .calendar: return 31924
+        case .calendarEventRSVP: return 31925
+        case let .unknown(value): return value
         }
     }
 
     /// The ``NostrEvent`` subclass associated with the kind.
     public var classForKind: NostrEvent.Type {
         switch self {
-        case .metadata:                     return MetadataEvent.self
-        case .textNote:                     return TextNoteEvent.self
-        case .followList:                   return FollowListEvent.self
+        case .metadata: return MetadataEvent.self
+        case .textNote: return TextNoteEvent.self
+        case .followList: return FollowListEvent.self
         case .legacyEncryptedDirectMessage: return LegacyEncryptedDirectMessageEvent.self
-        case .deletion:                     return DeletionEvent.self
-        case .repost:                       return TextNoteRepostEvent.self
-        case .reaction:                     return ReactionEvent.self
-        case .seal:                         return SealEvent.self
-        case .directMessage:                return DirectMessageEvent.self
-        case .genericRepost:                return GenericRepostEvent.self
-        case .giftWrap:                     return GiftWrapEvent.self
-        case .report:                       return ReportEvent.self
-        case .label:                        return LabelEvent.self
-        case .zapRequest:                   return LightningZapsRequestEvent.self
-        case .zapReceipt:                   return LightningZapsReceiptEvent.self
-        case .muteList:                     return MuteListEvent.self
-        case .relayListMetadata:            return RelayListMetadataEvent.self
-        case .bookmarksList:                return BookmarksListEvent.self
-        case .authentication:               return AuthenticationEvent.self
-        case .nwcRequest:                   return NWCRequestEvent.self
-        case .nwcResponse:                  return NWCResponseEvent.self
-        case .longformContent:              return LongformContentEvent.self
-        case .liveActivities:               return LiveActivitiesEvent.self
-        case .liveChatMessage:              return LiveChatMessageEvent.self
-        case .dateBasedCalendarEvent:       return DateBasedCalendarEvent.self
-        case .timeBasedCalendarEvent:       return TimeBasedCalendarEvent.self
-        case .calendar:                     return CalendarListEvent.self
-        case .calendarEventRSVP:            return CalendarEventRSVP.self
-        case .unknown:                      return NostrEvent.self
+        case .deletion: return DeletionEvent.self
+        case .repost: return TextNoteRepostEvent.self
+        case .reaction: return ReactionEvent.self
+        case .seal: return SealEvent.self
+        case .directMessage: return DirectMessageEvent.self
+        case .genericRepost: return GenericRepostEvent.self
+        case .giftWrap: return GiftWrapEvent.self
+        case .report: return ReportEvent.self
+        case .label: return LabelEvent.self
+        case .zapRequest: return LightningZapRequestEvent.self
+        case .zapReceipt: return LightningZapsReceiptEvent.self
+        case .muteList: return MuteListEvent.self
+        case .relayListMetadata: return RelayListMetadataEvent.self
+        case .bookmarksList: return BookmarksListEvent.self
+        case .authentication: return AuthenticationEvent.self
+        case .nwcRequest: return NWCRequestEvent.self
+        case .nwcResponse: return NWCResponseEvent.self
+        case .longformContent: return LongformContentEvent.self
+        case .liveActivities: return LiveActivitiesEvent.self
+        case .liveChatMessage: return LiveChatMessageEvent.self
+        case .dateBasedCalendarEvent: return DateBasedCalendarEvent.self
+        case .timeBasedCalendarEvent: return TimeBasedCalendarEvent.self
+        case .calendar: return CalendarListEvent.self
+        case .calendarEventRSVP: return CalendarEventRSVP.self
+        case .unknown: return NostrEvent.self
         }
     }
 
