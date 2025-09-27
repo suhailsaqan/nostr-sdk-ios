@@ -5,9 +5,9 @@
 //  Created by Terry Yiu on 3/16/24.
 //
 
-import Foundation
 import CryptoKit
 import CryptoSwift
+import Foundation
 import secp256k1
 
 public enum NIP44v2EncryptingError: Error {
@@ -46,7 +46,7 @@ struct MessageKeys {
 /// See [NIP-44 - Encrypted Payloads](https://github.com/nostr-protocol/nips/blob/master/44.md).
 public protocol NIP44v2Encrypting {}
 
-public extension NIP44v2Encrypting {
+extension NIP44v2Encrypting {
 
     /// Produces a `String` containing `plaintext` that has been encrypted using the `privateKey` of user A and the `publicKey`  of user B.
     ///
@@ -61,7 +61,9 @@ public extension NIP44v2Encrypting {
     ///   - privateKeyA: The private key of user A.
     ///   - publicKeyB: The public key of user B.
     /// - Returns: The encrypted ciphertext.
-    func encrypt(plaintext: String, privateKeyA: PrivateKey, publicKeyB: PublicKey) throws -> String {
+    public func encrypt(plaintext: String, privateKeyA: PrivateKey, publicKeyB: PublicKey) throws
+        -> String
+    {
         let conversationKey = try conversationKey(privateKeyA: privateKeyA, publicKeyB: publicKeyB)
 
         return try encrypt(plaintext: plaintext, conversationKey: conversationKey)
@@ -80,7 +82,9 @@ public extension NIP44v2Encrypting {
     ///   - privateKeyA: The private key of user A.
     ///   - publicKeyB: The public key of user B.
     /// - Returns: The decrypted plaintext message.
-    func decrypt(payload: String, privateKeyA: PrivateKey, publicKeyB: PublicKey) throws -> String {
+    public func decrypt(payload: String, privateKeyA: PrivateKey, publicKeyB: PublicKey) throws
+        -> String
+    {
         let conversationKey = try conversationKey(privateKeyA: privateKeyA, publicKeyB: publicKeyB)
 
         return try decrypt(payload: payload, conversationKey: conversationKey)
@@ -140,17 +144,18 @@ extension NIP44v2Encrypting {
 
         let unpaddedLength = (Int(padded[0]) << 8) | Int(padded[1])
 
-        guard 2+unpaddedLength <= padded.count else {
+        guard 2 + unpaddedLength <= padded.count else {
             throw NIP44v2EncryptingError.paddingInvalid
         }
 
-        let unpadded = toBytes(from: padded)[2..<2+unpaddedLength]
+        let unpadded = toBytes(from: padded)[2..<2 + unpaddedLength]
         let paddedLength = try calculatePaddedLength(unpaddedLength)
 
         guard unpaddedLength > 0,
-              unpadded.count == unpaddedLength,
-              padded.count == 2 + paddedLength,
-              let result = String(data: Data(unpadded), encoding: .utf8) else {
+            unpadded.count == unpaddedLength,
+            padded.count == 2 + paddedLength,
+            let result = String(data: Data(unpadded), encoding: .utf8)
+        else {
             throw NIP44v2EncryptingError.paddingInvalid
         }
 
@@ -185,9 +190,16 @@ extension NIP44v2Encrypting {
             throw NIP44v2EncryptingError.unknownVersion(Int(version))
         }
 
-        let nonce = data[data.index(data.startIndex, offsetBy: 1)..<data.index(data.startIndex, offsetBy: 33)]
-        let ciphertext = data[data.index(data.startIndex, offsetBy: 33)..<data.index(data.startIndex, offsetBy: dataLength - 32)]
-        let mac = data[data.index(data.startIndex, offsetBy: dataLength - 32)..<data.index(data.startIndex, offsetBy: dataLength)]
+        let nonce = data[
+            data.index(data.startIndex, offsetBy: 1)..<data.index(data.startIndex, offsetBy: 33)]
+        let ciphertext = data[
+            data.index(
+                data.startIndex, offsetBy: 33)..<data.index(
+                    data.startIndex, offsetBy: dataLength - 32)]
+        let mac = data[
+            data.index(
+                data.startIndex, offsetBy: dataLength - 32)..<data.index(
+                    data.startIndex, offsetBy: dataLength)]
 
         return DecodedPayload(nonce: nonce, ciphertext: ciphertext, mac: mac)
     }
@@ -199,7 +211,9 @@ extension NIP44v2Encrypting {
 
         let combined = aad + message
 
-        return Data(CryptoKit.HMAC<CryptoKit.SHA256>.authenticationCode(for: combined, using: SymmetricKey(data: key)))
+        return Data(
+            CryptoKit.HMAC<CryptoKit.SHA256>.authenticationCode(
+                for: combined, using: SymmetricKey(data: key)))
     }
 
     private func toBytes(from data: Data) -> [UInt8] {
@@ -220,23 +234,33 @@ extension NIP44v2Encrypting {
 
     private func parsePublicKey(from bytes: [UInt8]) throws -> secp256k1_pubkey {
         var publicKey = secp256k1_pubkey()
-        guard secp256k1_ec_pubkey_parse(secp256k1.Context.rawRepresentation, &publicKey, bytes, bytes.count) == 1 else {
+        guard
+            secp256k1_ec_pubkey_parse(
+                secp256k1.Context.rawRepresentation, &publicKey, bytes, bytes.count) == 1
+        else {
             throw NIP44v2EncryptingError.publicKeyInvalid
         }
         return publicKey
     }
 
-    private func computeSharedSecret(using publicKey: secp256k1_pubkey, and privateKeyBytes: [UInt8]) throws -> [UInt8] {
+    private func computeSharedSecret(
+        using publicKey: secp256k1_pubkey, and privateKeyBytes: [UInt8]
+    ) throws -> [UInt8] {
         var sharedSecret = [UInt8](repeating: 0, count: 32)
         var mutablePublicKey = publicKey
 
         // Multiplication of point B by scalar a (a ⋅ B), defined in [BIP340](https://github.com/bitcoin/bips/blob/e918b50731397872ad2922a1b08a5a4cd1d6d546/bip-0340.mediawiki).
         // The operation produces a shared point, and we encode the shared point's 32-byte x coordinate, using method bytes(P) from BIP340.
         // Private and public keys must be validated as per BIP340: pubkey must be a valid, on-curve point, and private key must be a scalar in range [1, secp256k1_order - 1]
-        guard secp256k1_ecdh(secp256k1.Context.rawRepresentation, &sharedSecret, &mutablePublicKey, privateKeyBytes, { (output, x32, _, _) in
-            memcpy(output, x32, 32)
-            return 1
-        }, nil) != 0 else {
+        guard
+            secp256k1_ecdh(
+                secp256k1.Context.rawRepresentation, &sharedSecret, &mutablePublicKey,
+                privateKeyBytes,
+                { (output, x32, _, _) in
+                    memcpy(output, x32, 32)
+                    return 1
+                }, nil) != 0
+        else {
             throw NIP44v2EncryptingError.sharedSecretComputationFailed
         }
         return sharedSecret
@@ -253,7 +277,8 @@ extension NIP44v2Encrypting {
         let parsedPublicKeyB = try parsePublicKey(from: publicKeyBBytes)
         let sharedSecret = try computeSharedSecret(using: parsedPublicKeyB, and: privateKeyABytes)
 
-        return CryptoKit.HKDF<CryptoKit.SHA256>.extract(inputKeyMaterial: SymmetricKey(data: sharedSecret), salt: Data("nip44-v2".utf8))
+        return CryptoKit.HKDF<CryptoKit.SHA256>.extract(
+            inputKeyMaterial: SymmetricKey(data: sharedSecret), salt: Data("nip44-v2".utf8))
     }
 
     /// Calculates unique per-message key.
@@ -267,7 +292,8 @@ extension NIP44v2Encrypting {
             throw NIP44v2EncryptingError.nonceLengthInvalid(nonce.count)
         }
 
-        let keys = CryptoKit.HKDF<CryptoKit.SHA256>.expand(pseudoRandomKey: conversationKey, info: nonce, outputByteCount: 76)
+        let keys = CryptoKit.HKDF<CryptoKit.SHA256>.expand(
+            pseudoRandomKey: conversationKey, info: nonce, outputByteCount: 76)
         let keysBytes = keys.bytes
 
         let chaChaKey = Data(keysBytes[0..<32])
@@ -277,7 +303,9 @@ extension NIP44v2Encrypting {
         return MessageKeys(chaChaKey: chaChaKey, chaChaNonce: chaChaNonce, hmacKey: hmacKey)
     }
 
-    func encrypt(plaintext: String, conversationKey: ContiguousBytes, nonce: Data? = nil) throws -> String {
+    func encrypt(plaintext: String, conversationKey: ContiguousBytes, nonce: Data? = nil) throws
+        -> String
+    {
         let nonceData: Data
         if let nonce {
             nonceData = nonce

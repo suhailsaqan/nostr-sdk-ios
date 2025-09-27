@@ -402,4 +402,3 @@ extension NostrEvent {
         }
     }
 }
-

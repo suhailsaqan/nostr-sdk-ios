@@ -123,9 +123,19 @@ public enum EventKind: RawRepresentable, CaseIterable, Codable, Equatable, Hasha
     /// See [NIP-42](https://github.com/nostr-protocol/nips/blob/master/42.md).
     case authentication
 
+    /// This kind of event contains wallet service information for Nostr Wallet Connect.
+    ///
+    /// See [NIP-47 - Nostr Wallet Connect](https://github.com/nostr-protocol/nips/blob/master/47.md).
+    case nwcInfo
+
     case nwcRequest
 
     case nwcResponse
+
+    /// This kind of event contains wallet notifications for Nostr Wallet Connect.
+    ///
+    /// See [NIP-47 - Nostr Wallet Connect](https://github.com/nostr-protocol/nips/blob/master/47.md).
+    case nwcNotification
 
     /// This kind of event is for long-form texxt content, generally referred to as "articles" or "blog posts".
     ///
@@ -154,6 +164,12 @@ public enum EventKind: RawRepresentable, CaseIterable, Codable, Equatable, Hasha
     /// See [NIP-52 - Calendar Event RSVP](https://github.com/nostr-protocol/nips/blob/master/52.md#calendar-event-rsvp).
     case calendarEventRSVP
 
+    /// This kind of event provides HTTP authentication using Nostr events.
+    /// The content should be empty and the event should contain 'u' and 'method' tags.
+    ///
+    /// See [NIP-98 - HTTP Auth](https://github.com/nostr-protocol/nips/blob/master/98.md).
+    case httpAuth
+
     /// Any other event kind number that isn't supported by this enum yet will be represented by `unknown` so that `NostrEvent`s of those event kinds can still be encoded and decoded.
     case unknown(RawValue)
 
@@ -178,8 +194,10 @@ public enum EventKind: RawRepresentable, CaseIterable, Codable, Equatable, Hasha
         .relayListMetadata,
         .bookmarksList,
         .authentication,
+        .nwcInfo,
         .nwcRequest,
         .nwcResponse,
+        .nwcNotification,
         .longformContent,
         .liveActivities,
         .liveChatMessage,
@@ -187,6 +205,7 @@ public enum EventKind: RawRepresentable, CaseIterable, Codable, Equatable, Hasha
         .timeBasedCalendarEvent,
         .calendar,
         .calendarEventRSVP,
+        .httpAuth,
     ]
 
     public init(rawValue: Int) {
@@ -220,8 +239,10 @@ public enum EventKind: RawRepresentable, CaseIterable, Codable, Equatable, Hasha
         case .relayListMetadata: return 10002
         case .bookmarksList: return 10003
         case .authentication: return 22242
+        case .nwcInfo: return 13194
         case .nwcRequest: return 23194
         case .nwcResponse: return 23195
+        case .nwcNotification: return 23196
         case .longformContent: return 30023
         case .liveActivities: return 30311
         case .liveChatMessage: return 1311
@@ -229,7 +250,8 @@ public enum EventKind: RawRepresentable, CaseIterable, Codable, Equatable, Hasha
         case .timeBasedCalendarEvent: return 31923
         case .calendar: return 31924
         case .calendarEventRSVP: return 31925
-        case let .unknown(value): return value
+        case .httpAuth: return 27235
+        case .unknown(let value): return value
         }
     }
 
@@ -255,8 +277,10 @@ public enum EventKind: RawRepresentable, CaseIterable, Codable, Equatable, Hasha
         case .relayListMetadata: return RelayListMetadataEvent.self
         case .bookmarksList: return BookmarksListEvent.self
         case .authentication: return AuthenticationEvent.self
+        case .nwcInfo: return NWCInfoEvent.self
         case .nwcRequest: return NWCRequestEvent.self
         case .nwcResponse: return NWCResponseEvent.self
+        case .nwcNotification: return NWCNotificationEvent.self
         case .longformContent: return LongformContentEvent.self
         case .liveActivities: return LiveActivitiesEvent.self
         case .liveChatMessage: return LiveChatMessageEvent.self
@@ -264,6 +288,7 @@ public enum EventKind: RawRepresentable, CaseIterable, Codable, Equatable, Hasha
         case .timeBasedCalendarEvent: return TimeBasedCalendarEvent.self
         case .calendar: return CalendarListEvent.self
         case .calendarEventRSVP: return CalendarEventRSVP.self
+        case .httpAuth: return HTTPAuthEvent.self
         case .unknown: return NostrEvent.self
         }
     }

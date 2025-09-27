@@ -5,10 +5,10 @@
 //  Created by Suhail Saqan on 03/08/25.
 //
 
-import secp256k1
-import Foundation
-import CryptoKit
 import CommonCrypto
+import CryptoKit
+import Foundation
+import secp256k1
 
 public func decryptContent(
     _ privkey: PrivateKey?, pubkey: PublicKey, content: String, encoding: EncEncoding
@@ -105,10 +105,14 @@ func decode_bech32(_ all: String) -> EncryptedContent? {
     let content_bech32 = String(parts[0])
     let iv_bech32 = String(parts[1])
 
-    guard let content_tup = try? Bech32.decode(content_bech32) else {
+    guard
+        let content_tup = try? NostrSDK.Bech32.decode(content_bech32)
+            as (hrp: String, checksum: Data)
+    else {
         return nil
     }
-    guard let iv_tup = try? Bech32.decode(iv_bech32) else {
+    guard let iv_tup = try? NostrSDK.Bech32.decode(iv_bech32) as (hrp: String, checksum: Data)
+    else {
         return nil
     }
     guard content_tup.hrp == "data" else {

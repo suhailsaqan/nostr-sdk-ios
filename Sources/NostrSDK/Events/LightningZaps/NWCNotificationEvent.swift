@@ -1,5 +1,5 @@
 //
-//  NWCResponseEvent.swift
+//  NWCNotificationEvent.swift
 //  NostrSDK
 //
 //  Created by Suhail Saqan on 3/8/25.
@@ -7,28 +7,28 @@
 
 import Foundation
 
-/// NWC Response Event (kind 23195)
+/// NWC Notification Event (kind 23196)
 ///
-/// Contains encrypted wallet responses for Nostr Wallet Connect.
-/// These events contain encrypted JSON-RPC responses from the wallet service.
+/// Contains encrypted wallet notifications for Nostr Wallet Connect.
+/// These events notify clients about wallet events such as received payments.
 /// - Note: See [NIP‑47 Nostr Wallet Connect](https://github.com/nostr-protocol/nips/blob/master/47.md) for details.
-public final class NWCResponseEvent: NostrEvent {
+public final class NWCNotificationEvent: NostrEvent {
 
     // MARK: - Unavailable Initializers
 
     public required init(from decoder: Decoder) throws {
         try super.init(from: decoder)
-        // Verify that the event kind is 23195 (nwc response).
-        if kind != .nwcResponse {
+        // Verify that the event kind is 23196 (nwc notification).
+        if kind != .nwcNotification {
             throw DecodingError.dataCorrupted(
                 .init(
                     codingPath: decoder.codingPath,
-                    debugDescription: "Invalid kind for NWCResponseEvent, expected 23195"))
+                    debugDescription: "Invalid kind for NWCNotificationEvent, expected 23196"))
         }
     }
 
     @available(
-        *, unavailable, message: "This initializer is unavailable for NWCResponseEvent."
+        *, unavailable, message: "This initializer is unavailable for NWCNotificationEvent."
     )
     required init(
         kind: EventKind,
@@ -42,7 +42,7 @@ public final class NWCResponseEvent: NostrEvent {
     }
 
     @available(
-        *, unavailable, message: "This initializer is unavailable for NWCResponseEvent."
+        *, unavailable, message: "This initializer is unavailable for NWCNotificationEvent."
     )
     required init(
         kind: EventKind,
@@ -56,18 +56,16 @@ public final class NWCResponseEvent: NostrEvent {
 
     // MARK: - Designated Initializer
 
-    /// Creates a new NWCResponseEvent.
+    /// Creates a new NWCNotificationEvent.
     ///
     /// - Parameters:
-    ///   - encryptedContent: The encrypted response content.
+    ///   - encryptedContent: The encrypted notification content.
     ///   - recipientPubkey: The recipient's public key (tag "p").
-    ///   - requestEventId: The ID of the request event being responded to (tag "e").
     ///   - createdAt: The creation timestamp.
     ///   - keypair: The wallet service's keypair for signing.
     public init(
         encryptedContent: String,
         recipientPubkey: String,
-        requestEventId: String,
         createdAt: Int64 = Int64(Date().timeIntervalSince1970),
         signedBy keypair: Keypair
     ) throws {
@@ -76,11 +74,8 @@ public final class NWCResponseEvent: NostrEvent {
         // Required "p" tag (recipient's pubkey).
         tags.append(Tag(name: "p", value: recipientPubkey))
 
-        // Required "e" tag (referencing the request event).
-        tags.append(Tag(name: "e", value: requestEventId))
-
         try super.init(
-            kind: .nwcResponse,
+            kind: .nwcNotification,
             content: encryptedContent,
             tags: tags,
             createdAt: createdAt,
@@ -94,35 +89,27 @@ public final class NWCResponseEvent: NostrEvent {
     public var recipientPubkey: String? {
         return firstValue(forTag: "p")
     }
-
-    /// Returns the referenced request event ID from the "e" tag.
-    public var referencedEventId: String? {
-        return firstValue(forTag: "e")
-    }
 }
 
 // MARK: - EventCreating Extensions
 
 extension EventCreating {
 
-    /// Creates a NWC Response Event (kind 23195) as specified in NIP‑47.
+    /// Creates a NWC Notification Event (kind 23196) as specified in NIP‑47.
     ///
     /// - Parameters:
-    ///   - encryptedContent: The encrypted response content.
+    ///   - encryptedContent: The encrypted notification content.
     ///   - recipientPubkey: The recipient's public key.
-    ///   - requestEventId: The ID of the request event being responded to.
     ///   - keypair: The wallet service's keypair for signing.
-    /// - Returns: The signed `NWCResponseEvent`.
-    public func nwcResponseEvent(
+    /// - Returns: The signed `NWCNotificationEvent`.
+    public func nwcNotificationEvent(
         encryptedContent: String,
         recipientPubkey: String,
-        requestEventId: String,
         signedBy keypair: Keypair
-    ) throws -> NWCResponseEvent {
-        return try NWCResponseEvent(
+    ) throws -> NWCNotificationEvent {
+        return try NWCNotificationEvent(
             encryptedContent: encryptedContent,
             recipientPubkey: recipientPubkey,
-            requestEventId: requestEventId,
             signedBy: keypair
         )
     }

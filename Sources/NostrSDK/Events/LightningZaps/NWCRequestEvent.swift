@@ -1,94 +1,116 @@
 //
 //  NWCRequestEvent.swift
-//  nostr-sdk-ios
+//  NostrSDK
 //
-//  Created by Suhail Saqan on 3/31/25.
+//  Created by Suhail Saqan on 3/8/25.
 //
 
 import Foundation
 
+/// NWC Request Event (kind 23194)
+///
+/// Contains encrypted wallet requests for Nostr Wallet Connect.
+/// These events contain encrypted JSON-RPC requests to the wallet service.
+/// - Note: See [NIP‑47 Nostr Wallet Connect](https://github.com/nostr-protocol/nips/blob/master/47.md) for details.
 public final class NWCRequestEvent: NostrEvent {
+
+    // MARK: - Unavailable Initializers
+
     public required init(from decoder: Decoder) throws {
         try super.init(from: decoder)
+        // Verify that the event kind is 23194 (nwc request).
+        if kind != .nwcRequest {
+            throw DecodingError.dataCorrupted(
+                .init(
+                    codingPath: decoder.codingPath,
+                    debugDescription: "Invalid kind for NWCRequestEvent, expected 23194"))
+        }
     }
 
-    @available(*, unavailable, message: "This initializer is unavailable for this class.")
+    @available(
+        *, unavailable, message: "This initializer is unavailable for NWCRequestEvent."
+    )
     required init(
-        kind: EventKind, content: String, tags: [Tag] = [],
-        createdAt: Int64 = Int64(Date.now.timeIntervalSince1970), signedBy keypair: Keypair
+        kind: EventKind,
+        content: String,
+        tags: [Tag] = [],
+        createdAt: Int64,
+        signedBy keypair: Keypair
     ) throws {
         try super.init(
             kind: kind, content: content, tags: tags, createdAt: createdAt, signedBy: keypair)
     }
 
-    @available(*, unavailable, message: "This initializer is unavailable for this class.")
+    @available(
+        *, unavailable, message: "This initializer is unavailable for NWCRequestEvent."
+    )
     required init(
-        kind: EventKind, content: String, tags: [Tag] = [],
-        createdAt: Int64 = Int64(Date.now.timeIntervalSince1970), pubkey: String
+        kind: EventKind,
+        content: String,
+        tags: [Tag] = [],
+        createdAt: Int64,
+        pubkey: String
     ) {
         super.init(kind: kind, content: content, tags: tags, createdAt: createdAt, pubkey: pubkey)
     }
 
-    @available(*, unavailable, message: "This initializer is unavailable for this class.")
-    override init(
-        id: String, pubkey: String, createdAt: Int64, kind: EventKind, tags: [Tag], content: String,
-        signature: String?
-    ) {
-        super.init(
-            id: id, pubkey: pubkey, createdAt: createdAt, kind: kind, tags: tags, content: content,
-            signature: signature)
-    }
+    // MARK: - Designated Initializer
 
-    /// Creates a zap request event (kind 23194) for a lightning payment.
+    /// Creates a new NWCRequestEvent.
     ///
     /// - Parameters:
-    ///   - content: Optional message to include with the zap request.
-    ///   - tags: An array of tags. Must include:
-    ///       - A `p` tag with the recipient’s hex-encoded pubkey.
+    ///   - encryptedContent: The encrypted request content.
+    ///   - recipientPubkey: The recipient's public key (tag "p").
     ///   - createdAt: The creation timestamp.
-    ///   - keypair: The sender's keypair for signing.
+    ///   - keypair: The client's keypair for signing.
     public init(
-        content: String, tags: [Tag] = [],
-        createdAt: Int64 = Int64(Date.now.timeIntervalSince1970),
+        encryptedContent: String,
+        recipientPubkey: String,
+        createdAt: Int64 = Int64(Date().timeIntervalSince1970),
         signedBy keypair: Keypair
     ) throws {
+        var tags = [Tag]()
+
+        // Required "p" tag (recipient's pubkey).
+        tags.append(Tag(name: "p", value: recipientPubkey))
+
         try super.init(
-            kind: .nwcRequest, content: content, tags: tags, createdAt: createdAt,
-            signedBy: keypair)
+            kind: .nwcRequest,
+            content: encryptedContent,
+            tags: tags,
+            createdAt: createdAt,
+            signedBy: keypair
+        )
     }
 
-    // MARK: - Computed properties for NWC Request Tags
+    // MARK: - Computed Properties
 
-    /// The recipient's hex-encoded public key from the `p` tag.
+    /// Returns the recipient's public key from the "p" tag.
     public var recipientPubkey: String? {
-        return firstValueForRawTagName("p")
+        return firstValue(forTag: "p")
     }
 }
 
+// MARK: - EventCreating Extensions
+
 extension EventCreating {
 
-    /// Creates a NWC Request event (kind 23194) as specified in NIP‑47.
-    ///
-    /// The following tags will be automatically created:
-    /// - `p`: The recipient’s hex-encoded public key.
+    /// Creates a NWC Request Event (kind 23194) as specified in NIP‑47.
     ///
     /// - Parameters:
-    ///   - content: An optional message to include with the zap request.
-    ///   - recipientPubkey: The recipient's hex-encoded public key.
-    ///   - keypair: The signing keypair.
+    ///   - encryptedContent: The encrypted request content.
+    ///   - recipientPubkey: The recipient's public key.
+    ///   - keypair: The client's keypair for signing.
     /// - Returns: The signed `NWCRequestEvent`.
     public func nwcRequestEvent(
-        content: String,
+        encryptedContent: String,
         recipientPubkey: String,
         signedBy keypair: Keypair
     ) throws -> NWCRequestEvent {
-        var tags: [Tag] = [Tag]()
-
-        // "p" tag: the recipient's hex-encoded public key.
-        let pTag = Tag(name: "p", value: recipientPubkey)
-        tags.append(pTag)
-
-        // Create and return the signed LightningZapsRequestEvent.
-        return try NWCRequestEvent(content: content, tags: tags, signedBy: keypair)
+        return try NWCRequestEvent(
+            encryptedContent: encryptedContent,
+            recipientPubkey: recipientPubkey,
+            signedBy: keypair
+        )
     }
 }

@@ -5,13 +5,6 @@
 //  Created by Suhail Saqan on 3/8/25.
 //
 
-
-//
-//  NostrRelay.swift
-//
-//  Created by Your Name on [Date].
-//
-
 import Foundation
 
 /// Dummy implementation of relay URL validation.
